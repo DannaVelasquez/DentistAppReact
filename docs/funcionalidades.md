@@ -14,23 +14,23 @@
 
 Las siguientes funcionalidades son requisitos mínimos necesarios para la aprobación del final y es fundamental que funcionen correctamente.
 
-**La aplicación deberá contar con cuatro (4) páginas: Home, Contacto, Detalle de cada dentista, Destacados**
+**La aplicación deberá contar con cuatro (4) páginas: Home, Contacto, Detalle de cada dentista, Destacados**OK
 
-**La correcta navegacion entre las paginas por medio de Links propios de React Router sera obligatoria para la aprobacion**
+**La correcta navegacion entre las paginas por medio de Links propios de React Router sera obligatoria para la aprobacion**OK
 
-**Es crucial la presencia homogenea en todas las paginas del [Navbar](/src/Components/Navbar.jsx) y [Footer](/src/Components/Footer.jsx)**
+**Es crucial la presencia homogenea en todas las paginas del [Navbar](/src/Components/Navbar.jsx) y [Footer](/src/Components/Footer.jsx)** OK
 
 ### Creación del Context
 
 Deberán crear un contexto global en su aplicación que ponga a disposición la siguiente información:
 
 - Tema de colores para toda la app (claro u oscuro)
-- Información traída por la API (pueden utilizar fetch o axios para realizar la llamada)
+- Información traída por la API (pueden utilizar fetch o axios para realizar la llamada) OK
 - Para el manejo y actualización del estado global deberán implementar el hook useReducer. Con dicho hook deberán implementar el cambio de tema de colores (con un botón en la app específico para ello dentro de Navbar), de claro a oscuro y viceversa.
 
 ### Creación de rutas
 
-Utilizando React Router deberán crear las siguientes direcciones descriptas en [rutas](#rutas)
+Utilizando React Router deberán crear las siguientes direcciones descriptas en [rutas](#rutas) OK
 
 ### Funcionalidad de destacados
 
@@ -50,19 +50,19 @@ En esta página se deberá mostrar un listado en forma de grilla de los dentista
 
 Se deberá tener en cuenta lo siguiente:
 
-- Deberá ser la página de inicio de la web.
-- La grilla deberá mostrar una [Card](/src/Components/Card.jsx) por cada dentista devuelto por la API.
-- Cada dentista deberá contener `name` y `username`, junto con un boton `ADD FAV` (para agregar al localStorage como fav) y un `link` que permita su navegacion a la pagina _dentist/:id_ en base al id del dentista.
+- Deberá ser la página de inicio de la web. OK
+- La grilla deberá mostrar una [Card](/src/Components/Card.jsx) por cada dentista devuelto por la API. OK
+- Cada dentista deberá contener `name` y `username`, junto con un boton `ADD FAV` (para agregar al localStorage como fav) y un `link` que permita su navegacion a la pagina _dentist/:id_ en base al id del dentista. OK
 - Cada Card debe integrar la funcionalidad de agregar a destacados
 
 ### Pagina 2: Contacto
 
 En esta pagina deberán implementar un [Form](/src/Components/Form.jsx) (con sus validaciones pertinentes) que capture la información del usuario que desea contactar con la empresa. Los campos serán los siguientes:
 
-- Nombre completo (con longitud mayor a 5)
-- Email (con formato correcto de email)
-- En caso de haber un error mostrar el siguiente mensaje de error: **Por favor verifique su información nuevamente**
-- Una vez "enviado"( no se envía a ningún servidor pero podemos mostrar por consola los datos submiteados) el formulario deberán mostrar un mensaje de éxito que contenga el siguiente formato: **Gracias _[nombre del usuario]_, te contactaremos cuando antes vía mail**
+- Nombre completo (con longitud mayor a 5) OK
+- Email (con formato correcto de email) OK
+- En caso de haber un error mostrar el siguiente mensaje de error: **Por favor verifique su información nuevamente** OK
+- Una vez "enviado"( no se envía a ningún servidor pero podemos mostrar por consola los datos submiteados) el formulario deberán mostrar un mensaje de éxito que contenga el siguiente formato: **Gracias _[nombre del usuario]_, te contactaremos cuando antes vía mail** OK
 
 ### Pagina 3: Detalle del dentista
 
@@ -70,7 +70,7 @@ En esta página se deberá mostrar un detalle de un dentista individual de la AP
 
 Se deberá tener en cuenta lo siguiente:
 
-- Deberá estar en la ruta `/dentist/:id`.
+- Deberá estar en la ruta `/dentist/:id`. OK
 - La página deberá indicar al menos la siguiente información:
   - Nombre del personaje
   - Email
