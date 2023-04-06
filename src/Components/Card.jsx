@@ -1,24 +1,16 @@
 import React from "react";
 
 import { Link } from 'react-router-dom'
+import { useContextGlobal } from "./utils/global.context";
 
 const Card = ({dentist}) => {
   
-  let dentistFav = localStorage.getItem('dentist')
+  const {favDispatch} = useContextGlobal()
   
 
   const addFav = ()=>{
     // Aqui iria la logica para agregar la Card en el localStorage
-    console.log(dentistFav)
-    if(dentistFav) {
-      alert('Dentista agregado exitosamente a favoritos')
-      let parsedFavs = JSON.parse(dentistFav)
-      dentistFav = [...parsedFavs, dentist]
-    } else{
-      alert('Dentista agregado exitosamente a favoritos')
-      dentistFav = [dentist]
-    }
-    localStorage.setItem('dentist', JSON.stringify(dentistFav))
+    favDispatch({type: 'ADD_DENTIST_FAV', payload: dentist})
   }
 
 

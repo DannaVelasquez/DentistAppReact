@@ -24,9 +24,9 @@ Las siguientes funcionalidades son requisitos mínimos necesarios para la aproba
 
 Deberán crear un contexto global en su aplicación que ponga a disposición la siguiente información:
 
-- Tema de colores para toda la app (claro u oscuro)
+- Tema de colores para toda la app (claro u oscuro) OK
 - Información traída por la API (pueden utilizar fetch o axios para realizar la llamada) OK
-- Para el manejo y actualización del estado global deberán implementar el hook useReducer. Con dicho hook deberán implementar el cambio de tema de colores (con un botón en la app específico para ello dentro de Navbar), de claro a oscuro y viceversa.
+- Para el manejo y actualización del estado global deberán implementar el hook useReducer. Con dicho hook deberán implementar el cambio de tema de colores (con un botón en la app específico para ello dentro de Navbar), de claro a oscuro y viceversa. OK
 
 ### Creación de rutas
 
@@ -34,13 +34,13 @@ Utilizando React Router deberán crear las siguientes direcciones descriptas en 
 
 ### Funcionalidad de destacados
 
-- Cada card renderizada debe tener la opción de poder agregarse a destacados.
-- Deberan guardar las cards destacadas en la sesión actual del localStorage
-- Manejar dicho comportamiento con el hook useReducer
+- Cada card renderizada debe tener la opción de poder agregarse a destacados. OK
+- Deberan guardar las cards destacadas en la sesión actual del localStorage OK
+- Manejar dicho comportamiento con el hook useReducer OK
 
 ### Estilos
 
-En base al tema (claro u oscuro) consumido del contexto global, estilar las cuatro [rutas](#rutas) de la App (asignar determinados estilos si es “dark” o “light”).
+En base al tema (claro u oscuro) consumido del contexto global, estilar las cuatro [rutas](#rutas) de la App (asignar determinados estilos si es “dark” o “light”). OK
 
 ## Rutas
 
@@ -53,7 +53,7 @@ Se deberá tener en cuenta lo siguiente:
 - Deberá ser la página de inicio de la web. OK
 - La grilla deberá mostrar una [Card](/src/Components/Card.jsx) por cada dentista devuelto por la API. OK
 - Cada dentista deberá contener `name` y `username`, junto con un boton `ADD FAV` (para agregar al localStorage como fav) y un `link` que permita su navegacion a la pagina _dentist/:id_ en base al id del dentista. OK
-- Cada Card debe integrar la funcionalidad de agregar a destacados
+- Cada Card debe integrar la funcionalidad de agregar a destacados OK
 
 ### Pagina 2: Contacto
 
@@ -72,16 +72,16 @@ Se deberá tener en cuenta lo siguiente:
 
 - Deberá estar en la ruta `/dentist/:id`. OK
 - La página deberá indicar al menos la siguiente información:
-  - Nombre del personaje
-  - Email
-  - Telefono
-  - Sitio web
+  - Nombre del personaje OK
+  - Email OK
+  - Telefono OK
+  - Sitio web OK
 
 ### Pagina 4: Destacados
 
-En esta pagina se debera renderizar las [Cards](/src/Components/Card.jsx) pertinentes a los dentistas destacados. Dicha información deberá estar almacenada dentro del localStorage del browser y ser consumida dentro de la pagina
+En esta pagina se debera renderizar las [Cards](/src/Components/Card.jsx) pertinentes a los dentistas destacados. Dicha información deberá estar almacenada dentro del localStorage del browser y ser consumida dentro de la pagina OK
 
-- Se deberá estar en la ruta `/favs`.
+- Se deberá estar en la ruta `/favs`. OK
 
 ## Resultado final
 

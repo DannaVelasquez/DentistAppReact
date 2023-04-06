@@ -5,14 +5,15 @@ const ContextGlobal = createContext();
 
 const themes = {
   dark: {
-    theme: false,
+    theme: false
   },
   light: {
-    theme: true,
+    theme: true
   }
 }
 
 const initialThemeState = themes.light
+const initialFavState = JSON.parse(localStorage.getItem('favs')) || []
 
 const themeReducer = (state, action) => {
   switch(action.type){
@@ -25,11 +26,26 @@ const themeReducer = (state, action) => {
   }
 }
 
+const favReducer = (state, action) => {
+  switch(action.type){
+    case 'ADD_DENTIST_FAV':
+      alert('Dentista fue agregado a favoritos satisfactoriamente')
+      return [...state, action.payload]
+    default:
+      throw new Error
+  }
+}
+
 const ContextProvider = ({ children }) => {
   //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
   const [themeState, themeDispatch] = useReducer(themeReducer, initialThemeState)
+  const [favState, favDispatch] = useReducer(favReducer,initialFavState )
   const [dentists, setDentists] = useState([])
   const url = 'https://jsonplaceholder.typicode.com/users'
+
+  useEffect(() => {
+    localStorage.setItem('favs', JSON.stringify(favState))
+  },[favState])
 
   useEffect(() => {
     fetch(url)
@@ -39,7 +55,7 @@ const ContextProvider = ({ children }) => {
 
 
   return (
-    <ContextGlobal.Provider value={{dentists, setDentists, themeState, themeDispatch}}>
+    <ContextGlobal.Provider value={{dentists, setDentists, themeState, themeDispatch, favState, favDispatch}}>
       {children}
     </ContextGlobal.Provider>
   );
