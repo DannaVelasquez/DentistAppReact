@@ -37,12 +37,29 @@ h1{
   align-items: center;
 }
 
+.navbar-dark {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  padding-left: 7%;
+  padding-right: 7%;
+  background-color: #000;
+  align-items: center;
+  color: #dddddd;
+}
+
 .navbar-right {
   display: flex;
   flex-direction: row;
   justify-content:space-between;
 }
 
+.navbar-right-dark {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  color: white;
+}
 nav{
   display: flex;
   width: 80vw;

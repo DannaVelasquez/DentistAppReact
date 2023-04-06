@@ -8,7 +8,7 @@ import { useContextGlobal } from '../Components/utils/global.context'
 const Home = () => {
 
   const {dentists} = useContextGlobal()
-
+  const {themeState} = useContextGlobal()
 
   return (
     <main className="" >
