@@ -1,6 +1,5 @@
 import React from 'react'
 import Card from '../Components/Card'
-import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useContextGlobal } from '../Components/utils/global.context'
 
@@ -16,7 +15,7 @@ const Home = () => {
       <h1>Home</h1>
       <div className='card-grid'>
         {/* Aqui deberias renderizar las cards */}
-        {dentists.map(dentist => <Link key={dentist.id} to={'/dentist/' + dentist.id}><Card dentist={dentist}/></Link>)}
+        {dentists.map(dentist => <Card dentist={dentist}/>)}
       </div>
     </main>
   )

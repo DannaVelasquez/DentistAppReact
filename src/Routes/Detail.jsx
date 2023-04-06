@@ -8,7 +8,6 @@ import { useParams } from 'react-router-dom'
 const Detail = () => {
   const params = useParams()
   const [dentistSelected, setDentistSelected] = useState({})
-  
   const url = `https://jsonplaceholder.typicode.com/users/${params.id}`
 
   useEffect(() => {
@@ -17,6 +16,7 @@ const Detail = () => {
     .then(data => setDentistSelected(data))
   }, [])
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
+
 
   return (
     <div>

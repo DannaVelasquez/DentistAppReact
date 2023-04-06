@@ -19,8 +19,28 @@ code {
   cursor: pointer;
 }
 
+.favButton:hover {
+  border-color: #646cff;
+}
+
 h1{
   text-align: center;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  padding-left: 7%;
+  padding-right: 7%;
+  background-color: #dddddd;
+  align-items: center;
+}
+
+.navbar-right {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
 }
 
 nav{
@@ -101,7 +121,7 @@ form{
 }
 
 table {
- border-collapse: collapse;
+    border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
     display: table;
@@ -127,8 +147,29 @@ tr:nth-child(even) {
   color: white;
 }
 
-.navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content:right;
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+button {
+  background-color: #f9f9f9;
+}
+
+.DH-logo{
+  padding-top: 1%;
 }

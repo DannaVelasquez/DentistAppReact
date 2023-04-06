@@ -32,7 +32,7 @@ const handleSubmit = (e) => {
         onChange={(e) => setUser({...user, fullname: e.target.value})}/>
         <input placeholder='Email' type='email'
         onChange={(e) => setUser({...user, email: e.target.value})}/>
-        <button type='submit'>Enviar</button>
+        <button type='submit'>Send</button>
       </form>
       {show ? <p>Gracias {user.fullname}, te contactaremos cuando antes vía mail</p> : null}
       {error ? <p>Por favor verifique su información nuevamente</p> : null}
