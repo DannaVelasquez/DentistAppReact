@@ -1,24 +1,21 @@
-import React from 'react'
-import Card from '../Components/Card'
-import { Link } from 'react-router-dom'
-import { useContextGlobal } from '../Components/utils/global.context'
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import React from "react";
+import Card from "../Components/Card";
+import { useContextGlobal } from "../Components/utils/global.context";
 
 const Home = () => {
-
-  const {dentists} = useContextGlobal()
-  const {themeState} = useContextGlobal()
+  const { dentistState } = useContextGlobal();
 
   return (
-    <main className="" >
+    <main className="">
       <h1>Home</h1>
-      <div className='card-grid'>
-        {/* Aqui deberias renderizar las cards */}
-        {dentists.map(dentist => <Card dentist={dentist}/>)}
+      <div className="card-grid">
+        {/* Listing dentists from Context using useReducer */}
+        {dentistState.dentistList.map((dentist) => (
+          <Card dentist={dentist} />
+        ))}
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

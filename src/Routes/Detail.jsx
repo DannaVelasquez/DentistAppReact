@@ -1,26 +1,24 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import { useEffect, React } from "react";
+import { useParams } from "react-router-dom";
+import { useContextGlobal } from "../Components/utils/global.context";
 
 const Detail = () => {
-  const params = useParams()
-  const [dentistSelected, setDentistSelected] = useState({})
-  const url = `https://jsonplaceholder.typicode.com/users/${params.id}`
+  const params = useParams();
+  const { dentistState, dentistDispatch } = useContextGlobal();
+  const url = `https://jsonplaceholder.typicode.com/users/${params.id}`;
 
+  // An specific dentist is fetched by consuming the url by dinamic parameter using useReducer
   useEffect(() => {
     fetch(url)
-    .then(res => res.json())
-    .then(data => setDentistSelected(data))
-  }, [])
-  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
-
+      .then((res) => res.json())
+      .then((data) =>
+        dentistDispatch({ type: "GET_DENTIST_DETAIL", payload: data })
+      );
+  }, []);
 
   return (
     <div>
-      <h1>Dentist {dentistSelected.name}</h1>
+      <h1>Dentist {dentistState.dentistDetail.name}</h1>
       <table>
         <thead>
           <tr>
@@ -32,17 +30,15 @@ const Detail = () => {
         </thead>
         <tbody>
           <tr>
-            <td>{dentistSelected.name}</td>
-            <td>{dentistSelected.email}</td>  
-            <td>{dentistSelected.phone}</td>  
-            <td>{dentistSelected.website}</td>  
+            <td>{dentistState.dentistDetail.name}</td>
+            <td>{dentistState.dentistDetail.email}</td>
+            <td>{dentistState.dentistDetail.phone}</td>
+            <td>{dentistState.dentistDetail.website}</td>
           </tr>
-        </tbody> 
-      </table>      
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
+        </tbody>
+      </table>
     </div>
-  )
-}
+  );
+};
 
-export default Detail
+export default Detail;
