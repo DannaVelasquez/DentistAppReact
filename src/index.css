@@ -5,12 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .favButton{
   background-color: rgba(136, 136, 136, 0.116);
   padding: 10px;
@@ -19,13 +21,50 @@ code {
   cursor: pointer;
 }
 
+.favButton-dark{
+  background-color: black;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  color: white;
+}
+
 .favButton:hover {
   border-color: #646cff;
 }
 
+.themeButton{
+  height: 0px;
+  justify-content: center;
+  cursor: pointer;
+  background-color: white;
+  color: white;
+  border: none;
+  border-color: white 0.0s;
+  padding: 0.0em 0.0em;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.themeButton-dark{
+  height: 0px;
+  justify-content: center;
+  cursor: pointer;
+  background-color: white;
+  color: white;
+  border: none;
+  border-color: white 0.0s;
+  padding: 0.0em 0.0em;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
 h1{
   text-align: center;
+  padding: 8px;
 }
+
 
 .navbar {
   display: flex;
@@ -82,7 +121,6 @@ footer {
   justify-content: center;
   text-align: center;
   padding: 2rem;
-  position: relative;
   bottom: 0;
   width: 90%;
   height: 40px;
@@ -95,7 +133,7 @@ footer > img{
 }
 footer > p{
   margin: 0;
-  padding-top: 0.7rem;
+  padding-top: 0.5rem;
 }
 
 form{
@@ -115,6 +153,18 @@ form{
   width: 200px;
   padding: 0.5rem 0.5rem 0 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
+  
+}
+
+.card-dark{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  border: 0.5px solid white;
+
 }
 
 .card-img {
@@ -138,17 +188,16 @@ form{
 }
 
 table {
-    border-collapse: collapse;
     border-spacing: 0;
-    width: 100%;
+    width: 90vw;
     display: table;
     border: 1px solid #ccc;
-
+    margin-left: 80px
 }
 
 td, th {
   border: 1px solid #dddddd;
-  text-align: left;
+  text-align: center;
   padding: 8px;
 }
 
@@ -189,4 +238,23 @@ button {
 
 .DH-logo{
   padding-top: 1%;
+}
+
+.footer-icon{
+  object-fit: cover;
+  width: 20px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  filter: invert(100);
+  padding: 3px;
+  height: 20px;
+}
+
+.footer-icon-dark{
+  object-fit: cover;
+  width: 20px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  padding: 3px;
+  height: 20px;
 }

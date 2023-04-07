@@ -26,7 +26,7 @@ const Navbar = () => {
       <Link to={routes.contact}><p className={themeState.theme ? 'navbar' : 'navbar-dark'}>Contact</p></Link>
       <Link to={routes.favs}><p className={themeState.theme ? 'navbar' : 'navbar-dark'}>Favs</p></Link>
       {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-      <button  onClick={switchTheme}>{themeState.theme ? '🌒' : '🌞'}</button>
+      <button  className={themeState.theme ? 'themeButton' : 'themeButton-dark'} onClick={switchTheme}>{themeState.theme ? '🌙' : '🌞'}</button>
       </div>
     </div>
   )
