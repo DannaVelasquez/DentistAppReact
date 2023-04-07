@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 const ContextGlobal = createContext();
 
@@ -12,7 +12,7 @@ const initialThemeState = themes.light;
 const initialFavState = JSON.parse(localStorage.getItem("favs")) || [];
 const initialDentistSate = { dentistList: [], dentistDetail: {} };
 
-// useReducer for switch theme, save favorites and API consuming
+// useReducer for switch theme
 const themeReducer = (state, action) => {
   switch (action.type) {
     case "SWITCH_DARK":
@@ -24,22 +24,39 @@ const themeReducer = (state, action) => {
   }
 };
 
+// Add dentists to favorite section having in mind do not repeat dentists in this section
 const favReducer = (state, action) => {
   switch (action.type) {
     case "ADD_DENTIST_FAV":
-      Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Dentist was added to favorites successfully',
-        showConfirmButton: false,
-        timer: 1500
-      })
-      return [...state, action.payload];
+      const newDentist = action.payload;
+      const existDentist = state.some(
+        (dentist) => dentist.id === newDentist.id
+      );
+      if (existDentist) {
+        Swal.fire({
+          position: "center",
+          icon: "warning",
+          title: "Dentist is already in Favorites",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        return state;
+      } else {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Dentist was added to favorites successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        return [...state, newDentist];
+      }
     default:
       throw new Error();
   }
 };
 
+// API consuming using useReducer
 const dentistReducer = (state, action) => {
   switch (action.type) {
     case "GET_DENTISTS":
